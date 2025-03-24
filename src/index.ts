@@ -1,7 +1,7 @@
 import "dotenv/config";
 
 import jwt from "jsonwebtoken";
-import { jwtSecretKey } from "./environment";
+import { jwtSecretKey } from "../environment";
 
 console.log(jwtSecretKey);
 
