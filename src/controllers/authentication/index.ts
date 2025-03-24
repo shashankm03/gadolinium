@@ -23,3 +23,4 @@ export const signUpWithUsernameAndPassword = async (username: string, password: 
         token: 'TODO',
         user: newUser
     };
+}
