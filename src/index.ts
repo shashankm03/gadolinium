@@ -7,7 +7,7 @@ console.log(jwtSecretKey);
 
 const payload: jwt.JwtPayload = {
   iss: "https://purpleshorts.co.in",
-  sub: "Shashank",
+  sub: "kabir-asani",
 };
 
 const token = jwt.sign(payload, jwtSecretKey, {
