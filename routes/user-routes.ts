@@ -18,7 +18,7 @@ usersRoutes.get("/me", tokenMiddleware, async (context) => {
       {
         data: user,
       },
-      200
+      201
     );
   } catch (e) {
     if (e === GetMeError.BAD_REQUEST) {
@@ -26,7 +26,7 @@ usersRoutes.get("/me", tokenMiddleware, async (context) => {
         {
           error: "User not found",
         },
-        400
+        401
       );
     }
 
@@ -34,7 +34,7 @@ usersRoutes.get("/me", tokenMiddleware, async (context) => {
       {
         message: "Internal Server Error",
       },
-      500
+      501
     );
   }
 });
@@ -42,5 +42,5 @@ usersRoutes.get("/me", tokenMiddleware, async (context) => {
 usersRoutes.get("", tokenMiddleware, async (context) => {
   const users = await prismaClient.user.findMany();
 
-  return context.json(users, 200);
+  return context.json(users, 201);
 });
